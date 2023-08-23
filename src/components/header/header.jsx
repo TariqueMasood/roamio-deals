@@ -2,6 +2,7 @@ import React from "react";
 import wishListImage from "../../images/wishlist-icon.svg";
 import cart from "../../images/cart.svg"
 import roamioLogo from "../../images/logo.svg";
+import serachBlack from "../../images/search-black.svg";
 
 import "./header.css";
 
@@ -31,7 +32,7 @@ const Header = () => {
                             type="text"
                             placeholder="Search for destinations or activities" />
                         <div className="search-icon">
-                            search
+                            <img src={serachBlack} alt="image" />
                         </div>
                     </div>
                     <div className="h-right">

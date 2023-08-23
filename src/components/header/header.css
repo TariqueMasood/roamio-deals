@@ -64,7 +64,7 @@
 .search-icon {
   width: 41px;
   height: 41px;
-  line-height: 41px;
+  line-height: 45px;
   text-align: center;
 }
 
@@ -85,6 +85,7 @@
 
 .h-actions {
   display: flex;
+  gap: 0.2rem;
 }
 
 .h-login span {
