@@ -86,7 +86,7 @@ const titleCss = css`
 `;
 
 const headerCss = css`
-  ${theme.css.typography.headerText};
+  ${theme.css.typography.headerText1};
   color: ${theme.colors.white};
   margin-bottom: 1em;
 `;
