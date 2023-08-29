@@ -223,10 +223,7 @@ const loginBtnCss2 = css`
 `;
 
 const mobileHeaderCss = css`
-  background: url(${mobileHeaderImg}), no-repeat;
-  max-width: ${393 / 16}em;
-  width: 100%;
-  height: ${196 / 16}em;
+position: relative;
 `;
 
 const mobileHeaderTitleCss = css`
@@ -254,14 +251,17 @@ const mobileTitle3Css = css`
 const searchInputCss = css`
   display: flex;
   justify-content: space-between;
-  height: 41px;
   ${theme.css.borderRadius.borderRadius8};
   border: 1px solid #83878A;
   background:  #FFF;
   backdrop-filter: blur(4px);
+  height: 41px;
   max-width: 323px;
   width: 100%;
-  margin: auto;
+  position: absolute;
+  z-index: 9999;
+  top: 20px;
+  left: 20px;
 
   input{
   border: #f6f6f6;
