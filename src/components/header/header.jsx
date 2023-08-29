@@ -223,7 +223,7 @@ const loginBtnCss2 = css`
 `;
 
 const mobileHeaderCss = css`
-position: relative;
+
 `;
 
 const mobileHeaderTitleCss = css`
@@ -258,10 +258,6 @@ const searchInputCss = css`
   height: 41px;
   max-width: 323px;
   width: 100%;
-  position: absolute;
-  z-index: 9999;
-  top: 20px;
-  left: 20px;
 
   input{
   border: #f6f6f6;
