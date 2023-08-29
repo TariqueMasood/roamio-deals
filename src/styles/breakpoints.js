@@ -1,10 +1,17 @@
-const breakpoints = [
-  {
-    sm: "576",
-    md: "768",
-    lg: "992",
-    xl: "1200",
-  },
-];
+export const Breakpoints = {
+  sm: 576,
+  md: 768,
+  lg: 1025,
+  xl: 1200,
+};
 
-export const mq = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
+const createMatcher = (size) => {
+  return `(min-width: ${Breakpoints[size]}px)`;
+};
+
+export const matchBreakpoint = (size) => {
+  if (typeof matchMedia !== "function") return false;
+  return matchMedia(createMatcher(size)).matches;
+};
+
+export const mq = (size) => `@media ${createMatcher(size)}`;

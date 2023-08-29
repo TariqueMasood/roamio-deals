@@ -1,47 +1,60 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import theme from "../styles/theme";
-import serviceStaycations from "../images/roamio-staycations.svg";
-import serviceActivities from "../images/roamio-activities.svg";
-import serviceDeals from "../images/roamio-deals.svg";
-import serviceVisa from "../images/roamio-visa.svg";
+import staycationDesktop from "../images/roamio-staycations.svg";
+import activitiesDesktop from "../images/roamio-activities.svg";
+import dealsDesktop from "../images/roamio-deals.svg";
+import visaDesktop from "../images/roamio-visa.svg";
+import staycationMobile from "../images/m-staycations-icon.svg";
+import activitiesMobile from "../images/m-activities-icon.svg";
+import dealsMobile from "../images/m-deals-icon.svg";
+import visaMobile from "../images/m-visa-icon.svg";
+import useViewportWidth from "../hooks/use-viewport-width";
+import { mq } from "../styles/breakpoints";
 
 const servicesData = [
     {
         id: 1,
-        icon: serviceStaycations,
+        icon: staycationDesktop,
+        mobileIcon: staycationMobile,
         title: "Staycations",
     },
     {
         id: 2,
-        icon: serviceActivities,
+        icon: activitiesDesktop,
+        mobileIcon: activitiesMobile,
         title: "Activities",
     },
     {
         id: 3,
-        icon: serviceDeals,
+        icon: dealsDesktop,
+        mobileIcon: dealsMobile,
         title: "Deals",
     },
     {
         id: 4,
-        icon: serviceVisa,
+        icon: visaDesktop,
+        mobileIcon: visaMobile,
         title: "Visa",
     },
 ];
 
 const RoamioServices = () => {
     const Services = (props) => {
-        const { icon, title } = props;
+        const { icon, mobileIcon, title } = props;
+        const isLaptopView = useViewportWidth("md");
         return (
-            <div css={roamioService}>
-                <img src={icon} alt="" />
+            <div css={roamioService(isLaptopView)}>
+                {
+                    isLaptopView ? <img src={icon} alt="" /> : <img src={mobileIcon} alt="" />
+                }
                 <div css={titleCss}>{title}</div>
             </div>
         );
     };
 
     return (
-        <section css={sectionCss}>
+        <section className="container" css={sectionCss}>
             <div css={containerCss}>
                 <div css={roamioServicesContainer}>
                     {servicesData.map((service) => {
@@ -50,6 +63,7 @@ const RoamioServices = () => {
                                 key={service.id}
                                 icon={service.icon}
                                 title={service.title}
+                                mobileIcon={service.mobileIcon}
                             />
                         );
                     })}
@@ -67,7 +81,7 @@ const sectionCss = css`
 
 const containerCss = css`
   max-width: 1200px;
- margin: 0 auto;
+  margin: 0 auto;
 `;
 
 const roamioServicesContainer = css`
@@ -77,28 +91,57 @@ const roamioServicesContainer = css`
  padding: 1.5em 0;
  margin: -56px auto 0;
  background-color: ${theme.colors.white};
- ${theme.css.boxShadow.boxShadowService};
+ ${theme.css.boxShadow.boxShadowNone};
  ${theme.css.borderRadius.borderRadius16};
  position: relative;
  z-index: 999;
+
+ ${mq("md")} {
+    ${theme.css.boxShadow.boxShadowService};
+ }
 `;
 
-const roamioService = css`
- text-align: center;
- border-right: 1px solid ${theme.colors.themeColorLight};
- max-width: ${200 / 16}rem;
+const roamioService = (isMobileView) => css`
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ ${theme.css.borderRadius.borderRadius15};
+ border-right: ${isMobileView ? `1px solid ${theme.colors.themeColorLight}` : "none"};
+ max-width: ${79 / 16}rem;
+ height: ${79 / 16}rem;
  width: 100%;
+${theme.css.gradient.themeGradient};
+
+ img {
+  width: ${30 / 16}rem;
+  height: ${30 / 16}rem;
+ }
 
  :last-of-type {
   border-right: none;
  }
+
+ ${mq("md")} {
+    ${theme.css.gradient.whiteGradient};
+ max-width: ${200 / 16}rem;
+ height: unset;
+ }
 `;
 
 const titleCss = css`
- font-size: 1em;
- font-style: normal;
- font-weight: 500;
- line-height: normal;
- color: ${theme.colors.themeColor};
- margin-top: 0.5em;
+   ${theme.css.typography.mobileServicesText};
+   color: ${theme.colors.white};
+   margin-top: 6px;
+
+${mq("md")}{
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: ${theme.colors.themeColor};
+    margin-top: 0.5em;
+}
+
+ 
 `;
