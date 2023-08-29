@@ -134,6 +134,30 @@ const typography = {
     font-weight: 600;
     line-height: 50px;
   `, // 45px
+
+  mobileTitleText1: css`
+    font-size: ${16 / 16}rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  `,
+  // 16px
+
+  mobileTitleText2: css`
+    font-size: ${20 / 16}rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+  `,
+  // 20px
+
+  mobileServicesText: css`
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  `,
+  // 10px
 };
 
 const borderRadius = {
@@ -148,11 +172,17 @@ const borderRadius = {
   borderRadius4: css`
     border-radius: 4px;
   `,
+  borderRadius6: css`
+    border-radius: 6px;
+  `,
   borderRadius8: css`
     border-radius: 8px;
   `,
   borderRadius12: css`
     border-radius: 12px;
+  `,
+  borderRadius15: css`
+    border-radius: 15px;
   `,
   borderRadius16: css`
     border-radius: 16px;
@@ -163,6 +193,9 @@ const gradient = {
   themeGradient: css`
     background: linear-gradient(180deg, #fe9000 0%, #ff3500 100%);
   `,
+  whiteGradient: css`
+    background: white;
+  `,
 };
 
 const boxShadow = {
@@ -171,6 +204,9 @@ const boxShadow = {
   `,
   boxShadowService: css`
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+  `,
+  boxShadowNone: css`
+    box-shadow: none;
   `,
 };
 

@@ -38,8 +38,8 @@ const ServiceCard = (props) => {
 }
 
 const Services = () => {
-    return (
 
+    return (
         <section className="ptb">
             <div className="container">
                 <div css={containerWrapperCss}>
@@ -53,6 +53,7 @@ const Services = () => {
                 </div>
             </div>
         </section >
+
     )
 }
 

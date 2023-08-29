@@ -1,7 +1,8 @@
 export const Breakpoints = {
   sm: 576,
-  lg: 898,
-  xl: 1025,
+  md: 768,
+  lg: 1025,
+  xl: 1200,
 };
 
 const createMatcher = (size) => {
