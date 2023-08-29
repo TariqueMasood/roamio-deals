@@ -167,12 +167,21 @@ const customerContentContainer = css`
 
 const titleCss = css`
   color: #fff;
+  font-size: ${20 / 16}rem;
+  font-weight: 600;
+  letter-spacing: 0.16px;
+  margin-bottom: 1em;
+
+${mq("md")}{
+  color: #fff;
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   letter-spacing: 0.16px;
   margin-bottom: 1em;
+}
+
 `;
 
 const subtitleCss = css`
@@ -186,8 +195,17 @@ const subtitleCss = css`
 `;
 
 const reviewWrapperCss = css`
+   
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2em;
+  
+  ${mq("md")} {
   display: flex;
   gap: ${80 / 16}em;
+  }
+
 `;
 
 const reviewContainerCss = css`
@@ -196,11 +214,19 @@ const reviewContainerCss = css`
 
 const reviewCss = css`
   color: #fff;
+  font-size: ${21 / 16}rem;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+
+${mq("md")}{
+  color: #fff;
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   letter-spacing: 0.16px;
+}
+
 `;
 
 const reviewTextCss = css`
@@ -214,23 +240,42 @@ const reviewTextCss = css`
 
 const sliderWrapper = css`
   background: #fff;
-  padding: ${40 / 16}em;
+  padding: ${20 / 16}em;
   ${theme.css.borderRadius.default};
+
+  ${mq("md")}{
+    background: #fff;
+    padding: ${40 / 16}em;
+    ${theme.css.borderRadius.default};
+
+  }
 `;
 
 const descriptionCss = css`
+  color: ${theme.colors.primaryText};
+  font-size: ${12 / 16}rem;
+  letter-spacing: 0.07px;
+
+  ${mq("md")}{
   color: ${theme.colors.primaryText};
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 21px;
   letter-spacing: 0.07px;
+  }
 `;
 
 const dividerLineCss = css`
+  margin: ${14 / 16}em 0;
+  height: 1px;
+  background: ${theme.colors.black};
+
+  ${mq("md")}{
   height: 1px;
   margin: ${20 / 16}em 0;
   background: ${theme.colors.black};
+  }
 `;
 
 const profileContainerCss = css`
@@ -258,7 +303,13 @@ const professionCss = css`
 `;
 
 const customerSliderContainer = css`
-  max-width: ${493 / 16}rem;
+  max-width: ${300 / 16}rem;
+  width: 100%;
+
+  ${mq("md")}{
+    max-width: ${493 / 16}rem;
+}
+
   .swiper {
     max-width: ${441 / 16}rem;
     width: 100%;
@@ -288,13 +339,23 @@ const customerSliderContainer = css`
   }
 
   .swiper-button-prev {
-    left: ${-90 / 16}em;
-    color: ${theme.colors.white};
+     display: none;
+
+    ${mq("md")}{
+      display: block;
+      left: ${-90 / 16}em;
+      color: ${theme.colors.white};
+    }
   }
 
   .swiper-button-next {
+    display: none;
+
+    ${mq("md")}{
+    display: block;
     right: ${-90 / 16}em;
     color: ${theme.colors.white};
+    }
   }
 
   .swiper-button-prev::after,
