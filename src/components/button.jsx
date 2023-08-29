@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import theme from "../styles/theme";
+import { mq } from "../styles/breakpoints";
 
 const Button = (props) => {
   const { text, icon } = props;
@@ -18,10 +19,14 @@ const buttonContainerCss = css`
   display: flex;
   align-items: center;
   gap: 0.5em;
-  padding: ${20 / 16}em;
+  padding: ${10 / 16}em;
   ${theme.css.gradient.themeGradient};
   border: ${theme.colors.themeColor};
   ${theme.css.borderRadius.borderRadius8};
+
+  ${mq("md")} {
+    padding: ${20 / 16}em;
+  }
 `;
 
 const buttonIconCss = css`
