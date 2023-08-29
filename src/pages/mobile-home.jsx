@@ -8,22 +8,23 @@ import account from "../images/account.svg";
 import theme from "../styles/theme";
 
 const MobileHome = () => {
+
   return (
     <nav css={mobileHeader}>
       <div className="container" css={mobileHomeCss}>
-        <div>
+        <div css={homeContentCss}>
           <img src={envelope} alt="img" />
           <div>Home</div>
         </div>
-        <div>
+        <div css={homeContentCss}>
           <img src={save} alt="img" />
           <div>Saved</div>
         </div>
-        <div>
+        <div css={homeContentCss}>
           <img src={deals} alt="img" />
           <div>Deals</div>
         </div>
-        <div>
+        <div css={homeContentCss}>
           <img src={account} alt="img" />
           <div>Account</div>
         </div>
@@ -47,8 +48,8 @@ const mobileHomeCss = css`
   text-align: center;
   display: flex;
   justify-content: space-around;
+`;
 
-  div {
-    cursor: pointer;
-  }
+const homeContentCss = css`
+  padding: 1em 0;
 `;
