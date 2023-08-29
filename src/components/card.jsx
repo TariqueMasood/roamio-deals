@@ -19,22 +19,23 @@ const Card = (props) => {
   } = props;
   return (
     <div css={cardCss}>
-      <a css={cardLinkCss} href="#">
+      <a css={cardLinkCss} href="#a">
         <div css={cardImageWrapCss}>
-          <img src={cardImg} alt="image" css={cardImageCss} />
-          <img src={cardHeartIcon} alt="image" css={heartIconCss} />
+          <img src={cardImg} alt="img" css={cardImageCss} />
+          <img src={cardHeartIcon} alt="img" css={heartIconCss} />
         </div>
         <div css={descriptionCss}>
           <div css={titleCss}>{title}</div>
           <div css={locationCss}>
-            <img src={locationIcon} alt="image" /> <span>{location}</span>
+            <img src={locationIcon} alt="img" /> <span>{location}</span>
           </div>
           <div css={ratingCss}>
             <div css={starCss}>
               <span css={starRatingCss}>{rating}</span>
-              <img css={ratingIconCss} src={ratingIcon} alt="image" />
+              <img css={ratingIconCss} src={ratingIcon} alt="img" />
             </div>
-            <span css={reviewCountCss}>{reviewCount}</span><span css={reviewCss}>{review}</span>
+            <span css={reviewCountCss}>{reviewCount}</span>
+            <span css={reviewCss}>{review}</span>
           </div>
           <div css={priceContainerCss}>
             <span css={priceCss}>{price}</span>
@@ -51,7 +52,8 @@ export default Card;
 
 const cardCss = css`
   border-radius: 15px;
-  border: 1px solid var(--input-outline, rgba(131, 135, 138, 0.5));
+  border: 1px solid rgba(131, 135, 138, 0.5);
+  scroll-snap-align: start;
 `;
 
 const cardLinkCss = css`
@@ -60,8 +62,7 @@ const cardLinkCss = css`
 
 const cardImageWrapCss = css`
   position: relative;
-
-`
+`;
 
 const cardImageCss = css`
   display: block;
@@ -72,9 +73,7 @@ const heartIconCss = css`
   position: absolute;
   top: 5px;
   right: 2px;
-
-`
-
+`;
 
 const descriptionCss = css`
   padding: 1em;
@@ -114,22 +113,21 @@ const starCss = css`
 const starRatingCss = css`
   ${theme.css.typography.ratingText};
   color: ${theme.colors.white};
-`
+`;
 
-const ratingIconCss = css`
-`
+const ratingIconCss = css``;
 
 const reviewCountCss = css`
-  color: #83878A;
-`
+  color: #83878a;
+`;
 
 const reviewCss = css`
-  color: #4A4A4A;
-`
+  color: #4a4a4a;
+`;
 
 const priceContainerCss = css`
   display: flex;
-  align-items: center
+  align-items: center;
 `;
 
 const priceCss = css`
@@ -144,11 +142,11 @@ const currencyCss = css`
   margin-right: ${20 / 16}em;
 `;
 const offerCss = css`
-display: block;
-width: ${41 / 16}rem;
-padding: ${6 / 16}em;
-${theme.css.gradient.themeGradient};
-${theme.css.typography.offerText};
-${theme.css.borderRadius.borderRadius4};
-color: ${theme.colors.orange};
+  display: block;
+  width: ${41 / 16}rem;
+  padding: ${6 / 16}em;
+  ${theme.css.gradient.themeGradient};
+  ${theme.css.typography.offerText};
+  ${theme.css.borderRadius.borderRadius4};
+  color: ${theme.colors.orange};
 `;

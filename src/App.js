@@ -6,7 +6,7 @@ import Coupon from "./components/coupon";
 import Deals from "./components/deals";
 import Explore from "./components/explore";
 import Footer from "./components/footer";
-import Header from "./components/header/header";
+import Header from "./components/header";
 import Hero from "./components/hero";
 import Services from "./components/services";
 import Staycation from "./components/staycation";
