@@ -165,6 +165,10 @@ const borderRadius = {
     border-radius: 8px;
   `,
 
+  none: css`
+    border-radius: 0;
+  `,
+
   borderRadius3: css`
     border-radius: 3px;
   `,

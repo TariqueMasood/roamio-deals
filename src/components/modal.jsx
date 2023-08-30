@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import ReactDOM from "react-dom";
+import theme from "../styles/theme";
+import closeIcon from "../images/close-icon-black.svg";
 
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
@@ -9,12 +11,12 @@ const Modal = ({ isOpen, onClose, children }) => {
     <div css={modalOverlay}>
       <div css={modal}>
         <button css={modalClose} onClick={onClose}>
-          close
+          <img src={closeIcon} alt="img" />
         </button>
         <div css={modalContent}>{children}</div>
       </div>
     </div>,
-    document.getElementById("modal-root") // Create a div with this ID in your HTML
+    document.getElementById("modal-root")
   );
 };
 
@@ -30,6 +32,8 @@ const modalOverlay = css`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99;
+  overflow: hidden;
 `;
 
 const modal = css`
@@ -37,9 +41,9 @@ const modal = css`
   padding: 20px;
   border-radius: 4px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  width: ${453 / 16}rem;
   position: relative;
-  z-index: 99999;
+  z-index: 999;
 `;
 
 const modalClose = css`
@@ -52,5 +56,5 @@ const modalClose = css`
   cursor: pointer;
 `;
 const modalContent = css`
-  background-color: red;
+  background-color: ${theme.colors.white};
 `;

@@ -13,66 +13,66 @@ import useViewportWidth from "../hooks/use-viewport-width";
 import { mq } from "../styles/breakpoints";
 
 const servicesData = [
-    {
-        id: 1,
-        icon: staycationDesktop,
-        mobileIcon: staycationMobile,
-        title: "Staycations",
-    },
-    {
-        id: 2,
-        icon: activitiesDesktop,
-        mobileIcon: activitiesMobile,
-        title: "Activities",
-    },
-    {
-        id: 3,
-        icon: dealsDesktop,
-        mobileIcon: dealsMobile,
-        title: "Deals",
-    },
-    {
-        id: 4,
-        icon: visaDesktop,
-        mobileIcon: visaMobile,
-        title: "Visa",
-    },
+  {
+    id: 1,
+    icon: staycationDesktop,
+    mobileIcon: staycationMobile,
+    title: "Staycations",
+  },
+  {
+    id: 2,
+    icon: activitiesDesktop,
+    mobileIcon: activitiesMobile,
+    title: "Activities",
+  },
+  {
+    id: 3,
+    icon: dealsDesktop,
+    mobileIcon: dealsMobile,
+    title: "Deals",
+  },
+  {
+    id: 4,
+    icon: visaDesktop,
+    mobileIcon: visaMobile,
+    title: "Visa",
+  },
 ];
 
 const RoamioServices = () => {
-    const Services = (props) => {
-        const { icon, mobileIcon, title } = props;
-        const isLaptopView = useViewportWidth("md");
-        return (
-            <div css={roamioService(isLaptopView)}>
-                {isLaptopView ? (
-                    <img src={icon} alt="" />
-                ) : (
-                    <img src={mobileIcon} alt="" />
-                )}
-                <div css={titleCss}>{title}</div>
-            </div>
-        );
-    };
-
+  const Services = (props) => {
+    const { icon, mobileIcon, title } = props;
+    const isLaptopView = useViewportWidth("md");
     return (
-        <section className="container" css={sectionCss}>
-            <div css={containerCss}>
-                <div css={roamioServicesContainer}>
-                    {servicesData.map((service) => {
-                        return (
-                            <Services
-                                key={service.id}
-                                icon={service.icon}
-                                title={service.title}
-                                mobileIcon={service.mobileIcon}
-                            />
-                        );
-                    })}
-                </div>
-            </div>
-        </section>
+      <div css={roamioService(isLaptopView)}>
+        {isLaptopView ? (
+          <img src={icon} alt="" />
+        ) : (
+          <img src={mobileIcon} alt="" />
+        )}
+        <div css={titleCss}>{title}</div>
+      </div>
     );
+  };
+
+  return (
+    <section className="container" css={sectionCss}>
+      <div css={containerCss}>
+        <div css={roamioServicesContainer}>
+          {servicesData.map((service) => {
+            return (
+              <Services
+                key={service.id}
+                icon={service.icon}
+                title={service.title}
+                mobileIcon={service.mobileIcon}
+              />
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default RoamioServices;
@@ -96,7 +96,7 @@ const roamioServicesContainer = css`
   ${theme.css.boxShadow.boxShadowNone};
   ${theme.css.borderRadius.borderRadius16};
   position: relative;
-  z-index: 999;
+  z-index: 9;
 
   ${mq("md")} {
     ${theme.css.boxShadow.boxShadowService};
@@ -111,8 +111,8 @@ const roamioService = (isMobileView) => css`
   align-items: center;
   ${theme.css.borderRadius.borderRadius15};
   border-right: ${isMobileView
-        ? `1px solid ${theme.colors.themeColorLight}`
-        : "none"};
+    ? `1px solid ${theme.colors.themeColorLight}`
+    : "none"};
   max-width: ${79 / 16}rem;
   height: ${79 / 16}rem;
   width: 100%;
@@ -129,6 +129,7 @@ const roamioService = (isMobileView) => css`
 
   ${mq("md")} {
     ${theme.css.gradient.whiteGradient};
+    ${theme.css.borderRadius.none};
     max-width: ${200 / 16}rem;
     height: unset;
   }

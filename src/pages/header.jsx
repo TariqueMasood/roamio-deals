@@ -13,6 +13,7 @@ import useViewportWidth from "../hooks/use-viewport-width";
 import RoamioServices from "../pages/roamio-services";
 import MobileHome from "../pages/mobile-home";
 import Modal from "../components/modal";
+import Login from "./login";
 
 const HeaderDesktop = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -69,7 +70,7 @@ const HeaderDesktop = () => {
                 Login
               </button>
               <Modal isOpen={isModalOpen} onClose={closeModal}>
-                <div>This is modal</div>
+                <Login />
               </Modal>
               <button css={loginBtnCss2} type="button">
                 Sign Up
