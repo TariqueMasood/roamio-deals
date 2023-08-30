@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import theme from "../styles/theme";
 import image1 from "../images/top-stay-1.svg";
 import image2 from "../images/top-stay-2.svg";
+import { mq } from "../styles/breakpoints";
 
 const topStaycationData = [
   {
@@ -88,16 +89,34 @@ const titleCss = css`
 `;
 
 const headerCss = css`
+  font-size: 13px;
+  margin-bottom: 12px;
+
+${mq("md")}{
   ${theme.css.typography.headerText1};
   color: ${theme.colors.white};
   margin-bottom: 1em;
+}
+
 `;
 
 const linkCss = css`
+  padding: 7px 16px;
+  display: inline-block;
+  font-size: 12px;
+  background: ${theme.colors.white};
+  ${theme.css.borderRadius.borderRadius8};
+  color: ${theme.colors.black};
+  
+
+ ${mq("md")}{
   display: inline-block;
   background: ${theme.colors.white};
   ${theme.css.borderRadius.borderRadius8};
   color: ${theme.colors.black};
   ${theme.css.typography.linkText2};
   padding: 1em 2em;
+ }
+ 
+
 `;
