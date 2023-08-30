@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 import mobile from "../images/mobile-img.svg";
 import scan from "../images/scan-img.svg";
 import theme from "../styles/theme";
-
+import { mq } from "../styles/breakpoints";
 
 
 const Coupon = () => {
@@ -41,20 +41,48 @@ const sectionCss = css`
 
 const containerWrapperCss = css`
    display: flex;
+   flex-direction: column;
    align-items: center;
    justify-content: space-evenly;
+
+  ${mq("md")}{
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-evenly;
+   }
 `;
 
 
 const appContainerCss = css`
    display: flex;
+   flex-direction: column;
+   text-align: center;
+   margin-bottom: 16px;
+
+   ${mq("md")}{
+    display: flex;
+    flex-direction: row;
    align-items: center;
+   margin-bottom: 0px !important;
+   }
 `;
 
 const scanContainerCss = css`
    display: flex;
    align-items: center;
-   gap: ${80 / 16}em;
+   flex-direction: column;
+   gap: 1em;
+   margin-bottom: 16px;
+
+   ${mq("md")}{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: ${80 / 16}em;
+    margin-bottom: 0px;
+   }
+     
 `;
 
 const titleContainerCss = css`
@@ -62,14 +90,26 @@ const titleContainerCss = css`
 `;
 
 const titleCss = css`
-  ${theme.css.typography.headerText2};
+  font-size: 18px;
+  font-weight: 500;
   color: ${theme.colors.black};
   margin-bottom: 0.5em;
+
+ ${mq("md")}{
+    ${theme.css.typography.headerText2};
+    color: ${theme.colors.black};
+    margin-bottom: 0.5em;
+   }
 `;
 
 const subtitleCss = css`
-${theme.css.typography.subtitleText};
+  font-size: 16px;
   color: ${theme.colors.black};
+
+  ${mq("md")}{
+    ${theme.css.typography.subtitleText};
+  color: ${theme.colors.black};
+  }
 `;
 
 const highLightTitleCss = css`
