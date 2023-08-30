@@ -1,6 +1,7 @@
 import React from "react";
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { useState } from "react";
 import theme from "../styles/theme";
 import wishListImage from "../images/wishlist-icon.svg";
 import cart from "../images/cart.svg";
@@ -11,8 +12,18 @@ import serachBlack from "../images/search-black.svg";
 import useViewportWidth from "../hooks/use-viewport-width";
 import RoamioServices from "../pages/roamio-services";
 import MobileHome from "../pages/mobile-home";
+import Modal from "../components/modal";
 
 const HeaderDesktop = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <section css={hContainerCss}>
       <div className="container">
@@ -54,9 +65,12 @@ const HeaderDesktop = () => {
               </div>
             </div>
             <div css={loginCss}>
-              <button css={loginBtnCss1} type="button">
+              <button css={loginBtnCss1} type="button" onClick={openModal}>
                 Login
               </button>
+              <Modal isOpen={isModalOpen} onClose={closeModal}>
+                <div>This is modal</div>
+              </Modal>
               <button css={loginBtnCss2} type="button">
                 Sign Up
               </button>
