@@ -132,10 +132,19 @@ const flogo = css`
 
 const fimg = css`
   .footer-logo {
-    max-width: 260px;
+    max-width: 180px;
     width: 100%;
     padding-bottom: 2em;
   }
+
+  ${mq("md")}{
+    .footer-logo {
+      max-width: 260px;
+      width: 100%;
+      padding-bottom: 2em;
+
+  }
+
 `;
 
 const ftollfree = css`
