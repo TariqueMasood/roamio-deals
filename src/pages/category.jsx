@@ -10,6 +10,7 @@ import category7 from "../images/category-7.svg";
 import category8 from "../images/category-view-all.svg";
 import chevronIcon from "../images/chevron-right-white.svg";
 import theme from "../styles/theme";
+import { mq } from "../styles/breakpoints";
 
 const categoriesData = [
   {
@@ -131,7 +132,14 @@ const sectionHeaderCss = css`
 `;
 
 const titleCss = css`
+
+  font-size: 20px;
+  font-weight: 600;
+    
+${mq("md")}{
   ${theme.css.typography.sectionHeaderText};
+}
+   
 `;
 
 const viewAllLinkCss = css`

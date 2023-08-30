@@ -11,6 +11,9 @@ import mariana from "../images/mariana.svg";
 import paramount from "../images/paramount.svg";
 import S19 from "../images/S19.svg";
 import premier from "../images/premier.svg";
+import { mq } from "../styles/breakpoints";
+
+
 
 const Staycation = () => {
   const cardData = [
@@ -115,7 +118,13 @@ const sectionHeaderCss = css`
 `;
 
 const staycationCss = css`
-  ${theme.css.typography.sectionHeaderText};
+
+    font-size: 20px;
+    font-weight: 600;
+
+   ${mq("md")}{
+    ${theme.css.typography.sectionHeaderText};
+   }
 `;
 
 const cardWrapperCss = css`

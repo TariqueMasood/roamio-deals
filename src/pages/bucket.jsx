@@ -10,6 +10,9 @@ import aquarium from "../images/Aquarium.svg";
 import dubaiPark from "../images/dubai-park.svg";
 import palmTower from "../images/palm-tower.svg";
 import lounge from "../images/lounge.svg";
+import { mq } from "../styles/breakpoints";
+
+
 
 const Bucket = () => {
   const cardData = [
@@ -114,7 +117,12 @@ const sectionHeaderCss = css`
 `;
 
 const staycationCss = css`
-  ${theme.css.typography.sectionHeaderText};
+  font-size: 20px;
+  font-weight: 600;
+
+   ${mq("md")}{
+    ${theme.css.typography.sectionHeaderText};
+   }
 `;
 
 const cardWrapperCss = css`

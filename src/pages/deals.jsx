@@ -10,6 +10,7 @@ import heartIcon from "../images/heart-icon.svg";
 import Card from "../components/card";
 import ExternalLink from "../components/external-link";
 import theme from "../styles/theme";
+import { mq } from "../styles/breakpoints";
 
 const Deals = () => {
   const cardData = [
@@ -99,7 +100,12 @@ const sectionHeaderCss = css`
 `;
 
 const titleCss = css`
-  ${theme.css.typography.sectionHeaderText};
+    font-size: 20px;
+    font-weight: 600;
+   
+  ${mq("md")}{
+    ${theme.css.typography.sectionHeaderText};
+  }
 `;
 
 const cardWrapperCss = css`

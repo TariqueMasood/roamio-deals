@@ -80,7 +80,7 @@ const scanContainerCss = css`
     flex-direction: row;
     align-items: center;
     gap: ${80 / 16}em;
-    margin-bottom: 0px;
+    margin-bottom: 0px !important;
    }
      
 `;
