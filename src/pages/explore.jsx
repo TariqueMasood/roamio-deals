@@ -25,14 +25,21 @@ const Explore = () => {
 export default Explore;
 
 const exploreCss = css`
-  margin-bottom: ${24 / 16}rem;
-  ${theme.css.typography.sectionHeaderText};
+   margin-bottom: ${24 / 16}rem;
+   font-size: 20px;
+   font-weight: 600;
+
+   ${mq("md")}{
+    margin-bottom: ${24 / 16}rem;
+    ${theme.css.typography.sectionHeaderText};
+   }
 `;
 
 const buttonsContainer = css`
   display: flex;
   flex-wrap: wrap;
   gap: 1em;
+
 
   ${mq("md")} {
     gap: 1.5em;

@@ -75,6 +75,16 @@ const wrapperCss = css`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 14px;
+
+
+${mq("md")}{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  }
+
 `;
 
 const imageCss = css`
@@ -85,12 +95,20 @@ const imageCss = css`
 `;
 
 const titleCss = css`
+  font-size: 16px;
+  font-weight: 600;
+  margin: 13px 0 13px;
+
+${mq("md")}{
   ${theme.css.typography.linkText};
   color: ${theme.colors.black};
   margin: 1em 0 0.75em;
+}
+  
 `;
 
 const subTitleCss = css`
+  text-align: center;
   ${theme.css.typography.linkText2};
   color: ${theme.colors.black};
   opacity: 0.7;
