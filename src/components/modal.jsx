@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import theme from "../styles/theme";
 import closeIcon from "../images/close-icon-black.svg";
 
+
 const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
@@ -38,7 +39,7 @@ const modalOverlay = css`
 
 const modal = css`
   background-color: white;
-  padding: 20px;
+  padding: ${20 / 16}em;
   border-radius: 4px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
   width: ${453 / 16}rem;
@@ -52,7 +53,7 @@ const modalClose = css`
   right: 10px;
   border: none;
   background-color: transparent;
-  font-size: 20px;
+  font-size: ${20 / 16}rem;
   cursor: pointer;
 `;
 const modalContent = css`

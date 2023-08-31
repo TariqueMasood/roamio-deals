@@ -54,6 +54,14 @@ const typography = {
     line-height: normal;
   `, // 13px
 
+  modalText: css`
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  `, 
+  // 12px 
+
   offerText: css`
     font-size: ${10 / 16}rem;
     font-style: normal;
