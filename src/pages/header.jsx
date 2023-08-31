@@ -14,6 +14,7 @@ import RoamioServices from "../pages/roamio-services";
 import MobileHome from "../pages/mobile-home";
 import Modal from "../components/modal";
 import Login from "./login";
+import SignUp from "./signup";
 
 const HeaderDesktop = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -72,9 +73,12 @@ const HeaderDesktop = () => {
               <Modal isOpen={isModalOpen} onClose={closeModal}>
                 <Login />
               </Modal>
-              <button css={loginBtnCss2} type="button">
+              <button css={loginBtnCss2} type="button" onClick={openModal}>
                 Sign Up
               </button>
+              <Modal isOpen={isModalOpen} onClose={closeModal}>
+                <SignUp />
+              </Modal>
             </div>
           </div>
         </header>
