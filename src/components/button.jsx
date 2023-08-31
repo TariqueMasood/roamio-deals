@@ -7,7 +7,7 @@ const Button = (props) => {
   const { text, icon } = props;
   return (
     <button css={buttonContainerCss}>
-      <img src={icon} css={buttonIconCss} alt="" />
+      {icon && <img src={icon} css={buttonIconCss} alt="" />}
       <span css={buttonTextCss}>{text}</span>
     </button>
   );

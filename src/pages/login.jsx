@@ -14,18 +14,25 @@ const Login = () => {
       <div css={modalImgCss}>
         <img src={logo} alt="" />
         <div css={loginTitleCss}>Login or Sign up</div>
-        <input
-          type="tel"
-          name="telphone"
-          pattern="[0-9]{10}"
-          title="Ten digits code"
-          required
-        />
+        <div css={inputContainer}>
+          <select css={selectCss} name="select">
+            <option value="us">+1</option>
+            <option value="ind">+91</option>
+          </select>
+          <input
+            css={inputCss}
+            type="tel"
+            name="telphone"
+            pattern="[0-9]{10}"
+            title="Ten digits code"
+            required
+          />
+        </div>
         <div css={loginSubTitleCss}>
           Loggin in with unregistered phone number creates a new Romaio account.
         </div>
         <div css={loginBtnCss}>
-          <Button text="Send verification code" />
+          <Button css={loginButton} text="Send verification code" />
         </div>
         <div css={LinkCss}>
           <a href="#">Login with password</a>
@@ -70,6 +77,32 @@ const loginTitleCss = css`
   color: ${theme.colors.black800};
 `;
 
+const inputContainer = css`
+  backgroud: ${theme.css.gradient.whiteGradient}
+  position: relative;
+  border-radius: 6px;
+  border: 1px solid rgba(131, 135, 138, 0.5);
+`;
+
+const selectCss = css`
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  left: 7px;
+  transform: translateY(-50%);
+`;
+
+const inputCss = css`
+  max-width: 333px;
+  width: 65%;
+  border: ${theme.colors.white};
+  padding: 15px 20px;
+  border-radius: 6px;
+  background: #fff;
+  outline: none;
+`;
+
 const loginSubTitleCss = css`
   margin-top: ${15 / 16}em;
   margin-bottom: ${15 / 16}em;
@@ -77,7 +110,21 @@ const loginSubTitleCss = css`
   ${theme.css.typography.modalText};
 `;
 
-const loginBtnCss = css``;
+const loginBtnCss = css`
+  display: flex;
+  justify-content: center;
+
+  button {
+    display: block;
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+`;
+
+const loginButton = css``;
 
 const LinkCss = css`
   margin-top: ${15 / 16}em;
