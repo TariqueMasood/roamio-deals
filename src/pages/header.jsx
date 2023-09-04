@@ -14,18 +14,13 @@ import RoamioServices from "../pages/roamio-services";
 import MobileHome from "../pages/mobile-home";
 import Modal from "../components/modal";
 import Login from "./login";
+import Button from "../components/button";
 import SignUp from "./signup";
 
 const HeaderDesktop = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoginModal, setIsLoginModal] = useState(false);
+  const [isSignupModal, setIsSignupModal] = useState(false);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
   return (
     <section css={hContainerCss}>
       <div className="container">
@@ -67,16 +62,34 @@ const HeaderDesktop = () => {
               </div>
             </div>
             <div css={loginCss}>
-              <button css={loginBtnCss1} type="button" onClick={openModal}>
+              <Button
+                onClick={() => {
+                  setIsLoginModal(true);
+                }}
+              >
                 Login
-              </button>
-              <Modal isOpen={isModalOpen} onClose={closeModal}>
+              </Button>
+              <Modal
+                isOpen={isLoginModal}
+                onClose={() => {
+                  setIsLoginModal(false);
+                }}
+              >
                 <Login />
               </Modal>
-              <button css={loginBtnCss2} type="button" onClick={openModal}>
+              <Button
+                onClick={() => {
+                  setIsSignupModal(true);
+                }}
+              >
                 Sign Up
-              </button>
-              <Modal isOpen={isModalOpen} onClose={closeModal}>
+              </Button>
+              <Modal
+                isOpen={isSignupModal}
+                onClose={() => {
+                  setIsSignupModal(false);
+                }}
+              >
                 <SignUp />
               </Modal>
             </div>
@@ -222,24 +235,19 @@ const actionCss = css`
 `;
 
 const loginCss = css`
+  display: flex;
+
   button {
     padding: 6px 12px;
-    border: none;
-    cursor: pointer;
-    font-family: "Poppins", sans-serif;
-    ${theme.css.borderRadius.borderRadius6}
+    ${theme.css.borderRadius.borderRadius6};
+    border: transparent;
+    color: ${theme.colors.white};
+
+    :first-of-type {
+      ${theme.css.gradient.transparentGradient};
+      color: ${theme.colors.themeColor};
+    }
   }
-`;
-
-const loginBtnCss1 = css`
-  color: ${theme.colors.white};
-  margin-right: 7px;
-  color: #ff3500;
-`;
-
-const loginBtnCss2 = css`
-  background: linear-gradient(180deg, #fe9000 0%, #ff3500 100%);
-  color: ${theme.colors.white};
 `;
 
 const mobileHeaderCss = css`

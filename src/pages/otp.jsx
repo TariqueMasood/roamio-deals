@@ -37,7 +37,9 @@ const SignUp = () => {
           Loggin in with unregistered phone number creates a new Romaio account.
         </div>
         <div css={signUpBtnCss}>
-          <Button css={signUpButton} text="Continue" onClick={openModal} />
+          <Button css={signUpButton} onClick={openModal}>
+            Continue
+          </Button>
           <Modal isOpen={isModalOpen} onClose={closeModal}>
             <SignUp />
           </Modal>

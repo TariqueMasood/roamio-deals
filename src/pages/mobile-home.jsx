@@ -6,28 +6,36 @@ import save from "../images/heart.svg";
 import deals from "../images/deals-icon.svg";
 import account from "../images/account.svg";
 import theme from "../styles/theme";
+import { Link } from "react-router-dom";
 
 const MobileHome = () => {
-
   return (
     <nav css={mobileHeader}>
       <div className="container" css={mobileHomeCss}>
-        <div css={homeContentCss}>
-          <img src={envelope} alt="img" />
-          <div>Home</div>
-        </div>
-        <div css={homeContentCss}>
-          <img src={save} alt="img" />
-          <div>Saved</div>
-        </div>
-        <div css={homeContentCss}>
-          <img src={deals} alt="img" />
-          <div>Deals</div>
-        </div>
-        <div css={homeContentCss}>
-          <img src={account} alt="img" />
-          <div>Account</div>
-        </div>
+        <Link to="/">
+          <div css={homeContentCss}>
+            <img src={envelope} alt="img" />
+            <div>Home</div>
+          </div>
+        </Link>
+        <Link to="/saved">
+          <div css={homeContentCss}>
+            <img src={save} alt="img" />
+            <div>Saved</div>
+          </div>
+        </Link>
+        <Link to="/deals">
+          <div css={homeContentCss}>
+            <img src={deals} alt="img" />
+            <div>Deals</div>
+          </div>
+        </Link>
+        <Link to="/account">
+          <div css={homeContentCss}>
+            <img src={account} alt="img" />
+            <div>Account</div>
+          </div>
+        </Link>
       </div>
     </nav>
   );

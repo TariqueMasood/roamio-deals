@@ -4,6 +4,7 @@ const Colors = {
   themeColor: "#FF3500",
   themeColorLight: "#e6b87c",
   primaryText: "#282828",
+  default: "#f2f2f2",
 
   white: "#ffffff",
 
@@ -207,6 +208,12 @@ const gradient = {
   `,
   whiteGradient: css`
     background: white;
+  `,
+  transparentGradient: css`
+    background: transparent;
+  `,
+  defaultGradient: css`
+    background: #f2f2f2;
   `,
 };
 

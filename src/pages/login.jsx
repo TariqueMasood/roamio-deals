@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import ReactDOM from "react-dom";
 import theme from "../styles/theme";
 import logo from "../images/logo.svg";
 import Button from "../components/button";
@@ -32,10 +31,10 @@ const Login = () => {
           Loggin in with unregistered phone number creates a new Romaio account.
         </div>
         <div css={loginBtnCss}>
-          <Button css={loginButton} text="Send verification code" />
+          <Button>Send verification code</Button>
         </div>
         <div css={LinkCss}>
-          <a href="#">Login with password</a>
+          <a href="#login">Login with password</a>
         </div>
         <div css={loginCss}>or login with</div>
         <div css={loginWithCss}>
@@ -50,7 +49,7 @@ const Login = () => {
           </div>
         </div>
         <div css={modalPolicyCss}>
-          By signing up, you’re agree to our <span>Terms & Conditions</span> and{" "}
+          By signing up, you're agree to our <span>Terms & Conditions</span> and{" "}
           <span>Privacy Policy</span>
         </div>
       </div>
@@ -123,8 +122,6 @@ const loginBtnCss = css`
     letter-spacing: 1px;
   }
 `;
-
-const loginButton = css``;
 
 const LinkCss = css`
   margin-top: ${15 / 16}em;

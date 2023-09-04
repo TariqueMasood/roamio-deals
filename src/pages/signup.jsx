@@ -1,26 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import ReactDOM from "react-dom";
-import { useState } from "react";
 import theme from "../styles/theme";
 import logo from "../images/logo.svg";
 import Button from "../components/button";
 import facebook from "../images/facebook-icon.svg";
 import google from "../images/google-icon.svg";
 import mail from "../images/mail-icon.svg";
-import Modal from "../components/modal";
 
 const SignUp = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
   return (
     <div css={signUpWrapperCss}>
       <div css={modalImgCss}>
@@ -40,10 +27,10 @@ const SignUp = () => {
           Loggin in with unregistered phone number creates a new Romaio account.
         </div>
         <div css={signUpBtnCss}>
-          <Button css={signUpButton} text="Send verification code" />
+          <Button>Send verification code</Button>
         </div>
         <div css={LinkCss}>
-          <a href="#">Login with password</a>
+          <a href="#login">Login with password</a>
         </div>
         <div css={signUpCss}>or login with</div>
         <div css={signUpWithCss}>
@@ -58,7 +45,7 @@ const SignUp = () => {
           </div>
         </div>
         <div css={modalPolicyCss}>
-          By signing up, you’re agree to our <span>Terms & Conditions</span> and{" "}
+          By signing up, you're agree to our <span>Terms & Conditions</span> and{" "}
           <span>Privacy Policy</span>
         </div>
       </div>
@@ -119,8 +106,6 @@ const signUpBtnCss = css`
     letter-spacing: 1px;
   }
 `;
-
-const signUpButton = css``;
 
 const LinkCss = css`
   margin-top: ${15 / 16}em;

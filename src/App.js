@@ -1,37 +1,23 @@
-import Activities from "./pages/activities";
-import BestDeals from "./pages/best-deals";
-import Bucket from "./pages/bucket";
-import CategoryPage from "./pages/category";
-import Coupon from "./pages/coupon";
-import Deals from "./pages/deals";
-import Explore from "./pages/explore";
-import Footer from "./pages/footer";
-import Header from "./pages/header";
-import Hero from "./pages/hero";
-import Services from "./pages/services";
-import Staycation from "./pages/staycation";
-import TopStaycation from "./pages/top-staycation";
-import CustomerSlider from "./pages/customer-slider";
 import "./App.css";
+import Layout from "./pages/Layout";
+import Home from "./pages/home";
+import { Route, Routes } from "react-router-dom";
+import PageNotFound from "./pages/page-not-found";
+import Account from "./pages/account";
+import Saved from "./pages/saved";
+import Deals from "./pages/deals";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Hero />
-      <Deals />
-      <Staycation />
-      <Explore />
-      <CategoryPage />
-      <Activities />
-      <BestDeals />
-      <Bucket />
-      <CustomerSlider />
-      <TopStaycation />
-      <Services />
-      <Coupon />
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="saved" element={<Saved />} />
+        <Route path="deals" element={<Deals />} />
+        <Route path="account" element={<Account />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Route>
+    </Routes>
   );
 }
 
