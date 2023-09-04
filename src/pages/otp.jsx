@@ -104,19 +104,3 @@ const signUpBtnCss = css`
 `;
 
 const signUpButton = css``;
-
-const LinkCss = css`
-  margin-top: ${15 / 16}em;
-  margin-bottom: ${15 / 16}em;
-  ${theme.css.typography.linkText2};
-
-  a {
-    color: #ff3500;
-  }
-`;
-
-const signUpCss = css`
-  margin-bottom: ${15 / 16}em;
-  ${theme.css.typography.modalText};
-  color: ${theme.colors.black800};
-`;
