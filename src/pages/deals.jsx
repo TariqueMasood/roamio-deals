@@ -15,6 +15,7 @@ import { mq } from "../styles/breakpoints";
 const Deals = () => {
   const cardData = [
     {
+      id: 1,
       cardImage: alburj,
       cardHeartIcon: heartIcon,
       title: "Burj Khalifa Observation Deck",
@@ -29,6 +30,7 @@ const Deals = () => {
       offer: 23,
     },
     {
+      id: 2,
       cardImage: safari,
       cardHeartIcon: heartIcon,
       title: "Burj Khalifa Observation Deck",
@@ -43,6 +45,7 @@ const Deals = () => {
       offer: 23,
     },
     {
+      id: 3,
       cardImage: cruise,
       cardHeartIcon: heartIcon,
       title: "Burj Khalifa Observation Deck",
@@ -100,10 +103,10 @@ const sectionHeaderCss = css`
 `;
 
 const titleCss = css`
-    font-size: 20px;
-    font-weight: 600;
-   
-  ${mq("md")}{
+  font-size: 20px;
+  font-weight: 600;
+
+  ${mq("md")} {
     ${theme.css.typography.sectionHeaderText};
   }
 `;
