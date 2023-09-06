@@ -89,7 +89,6 @@ const locationCss = css`
   color: #4a4a4a;
   font-size: 0.75rem;
   font-weight: 400;
-  //  margin-bottom: 10px;
 `;
 
 const ratingCss = css`

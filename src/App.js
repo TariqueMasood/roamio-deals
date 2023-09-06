@@ -6,6 +6,7 @@ import PageNotFound from "./pages/page-not-found";
 import Account from "./pages/account";
 import Saved from "./pages/saved";
 import Deals from "./pages/deals";
+import OrderDetails from "./pages/order-details";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="saved" element={<Saved />} />
         <Route path="deals" element={<Deals />} />
         <Route path="account" element={<Account />} />
+        <Route path="order-details" element={<OrderDetails />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
     </Routes>
