@@ -2,45 +2,45 @@
 import { css } from "@emotion/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import theme from "../styles/theme";
-import banner from "../images/hero-1.svg";
 import "swiper/css";
 import "swiper/css/navigation";
+import theme from "../styles/theme";
+import banner from "../images/hero-1.svg";
 import RoamioServices from "../pages/roamio-services";
 import useViewportWidth from "../hooks/use-viewport-width";
 
 const Hero = () => {
-    const isLaptopView = useViewportWidth("md");
-    return (
-        <div className="container" css={swiperContainerCss}>
-            <Swiper loop navigation={true} slidesPerView={1} modules={[Navigation]}>
-                <SwiperSlide>
-                    <img css={bannerImgCss} src={banner} alt="banner" />
-                    <div css={bannerContentContainer}>
-                        <div css={titleWrapperCss}>
-                            <div css={HeaderCss} data-swiper-parallax="-200">
-                                Stay & Play Kids Go Free Offer
-                            </div>
-                            <div css={titleCss} data-swiper-parallax="-100">
-                                1 paying adult can now stay for free in the same room booked
-                                with the parents.
-                            </div>
-                            <a href="#" css={linkCss}>
-                                Explore
-                            </a>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img css={bannerImgCss} src={banner} alt="banner" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img css={bannerImgCss} src={banner} alt="banner" />
-                </SwiperSlide>
-            </Swiper>
-            {isLaptopView && <RoamioServices />}
-        </div>
-    );
+  const isLaptopView = useViewportWidth("md");
+  return (
+    <div className="container" css={swiperContainerCss}>
+      <Swiper loop navigation={true} slidesPerView={1} modules={[Navigation]}>
+        <SwiperSlide>
+          <img css={bannerImgCss} src={banner} alt="banner" />
+          <div css={bannerContentContainer}>
+            <div css={titleWrapperCss}>
+              <div css={HeaderCss} data-swiper-parallax="-200">
+                Stay & Play Kids Go Free Offer
+              </div>
+              <div css={titleCss} data-swiper-parallax="-100">
+                1 paying adult can now stay for free in the same room booked
+                with the parents.
+              </div>
+              <a href="#" css={linkCss}>
+                Explore
+              </a>
+            </div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img css={bannerImgCss} src={banner} alt="banner" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img css={bannerImgCss} src={banner} alt="banner" />
+        </SwiperSlide>
+      </Swiper>
+      {isLaptopView && <RoamioServices />}
+    </div>
+  );
 };
 
 export default Hero;
