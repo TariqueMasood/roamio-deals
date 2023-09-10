@@ -16,7 +16,7 @@ const Home = () => {
     <>
       <Hero />
       <Deals />
-      <Staycation />
+      {/* <Staycation />
       <Explore />
       <CategoryPage />
       <Activities />
@@ -25,7 +25,7 @@ const Home = () => {
       <CustomerSlider />
       <TopStaycation />
       <Services />
-      <Coupon />
+      <Coupon /> */}
     </>
   );
 };

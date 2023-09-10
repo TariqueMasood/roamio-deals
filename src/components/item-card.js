@@ -1,37 +1,19 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import theme from "../styles/theme";
-import img2 from "../images/order-img-2.svg";
+import Counter from "./counter";
 
 const ItemCard = (props) => {
-  const {
-    heading,
-    offerPrice,
-    price,
-    currency,
-    minusImg,
-    count,
-    plusImg,
-    quantity,
-  } = props;
 
   return (
-    <>
       <div css={ItemCardCss}>
-        <div css={ItemCardTitle}>{heading}</div>
+        <div css={ItemCardTitle}>{props.product.title}</div>
         <div css={titleCss}>
-          <span css={offerCss}>{offerPrice}</span>
-          <span css={priceCss}>{price}</span>
-          <span css={currencyCss}>{currency}</span>
+          <span css={offerCss}>298</span>
+          <span css={priceCss}>{props.product.price}</span>
+          <span css={currencyCss}>{props.product.currency}</span>
         </div>
-        <div css={countWrapperCss}>
-          <img css={minusIcon} src={minusImg} alt="img" />
-          <span css={countCss}>{count}</span>
-          <img css={plusIcon} src={plusImg} alt="img" />
-          <span css={quantityCss}>{quantity}</span>
-        </div>
+        <Counter />
       </div>
-    </>
   );
 };
 
@@ -78,31 +60,4 @@ const currencyCss = css`
   font-size: ${12 / 16}rem;
   font-weight: 400;
   color: #4a4a4a;
-`;
-
-const countWrapperCss = css`
-  align-items: center;
-  display: flex;
-  gap: 10px;
-`;
-
-const minusIcon = css`
-  cursor: pointer;
-  display: block;
-`;
-
-const countCss = css`
-  display: block;
-`;
-
-const plusIcon = css`
-  cursor: pointer;
-  display: block;
-`;
-
-const quantityCss = css`
-  font-size: ${12 / 16}rem;
-  font-weight: 400;
-  display: block;
-  color: #83878a;
 `;

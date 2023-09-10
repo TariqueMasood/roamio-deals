@@ -7,16 +7,18 @@ import Account from "./pages/account";
 import Saved from "./pages/saved";
 import Deals from "./pages/deals";
 import OrderDetails from "./pages/order-details";
+import Cart from "./pages/cart";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="saved" element={<Saved />} />
-        <Route path="deals" element={<Deals />} />
-        <Route path="account" element={<Account />} />
-        <Route path="order-details" element={<OrderDetails />} />
+        <Route path="/saved" element={<Saved />} />
+        <Route path="/deals" element={<Deals />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/deals/:productId" element={<OrderDetails />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
     </Routes>

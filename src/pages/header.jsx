@@ -16,10 +16,18 @@ import Modal from "../components/modal";
 import Login from "./login";
 import Button from "../components/button";
 import SignUp from "./signup";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 const HeaderDesktop = () => {
   const [isLoginModal, setIsLoginModal] = useState(false);
   const [isSignupModal, setIsSignupModal] = useState(false);
+  const items = useSelector((state) => state.product);
+  const dispatch = useDispatch();
+
+  // const handleCart = () => {
+  //   dispatch()
+  // }
 
   return (
     <section css={hContainerCss}>
@@ -27,7 +35,9 @@ const HeaderDesktop = () => {
         <header css={wrapperCss}>
           <div css={leftCss}>
             <div css={logoCss}>
-              <img src={roamioLogo} alt="logo" />
+              <Link to="/">
+                <img src={roamioLogo} alt="logo" />
+              </Link>
             </div>
             <div css={dropCss}>
               <select css={selectCss} name="seclectlist">
@@ -56,10 +66,12 @@ const HeaderDesktop = () => {
                 <img src={wishListImage} alt="wishlist" />
                 <span>Wishlist</span>
               </div>
-              <div css={actionCss}>
-                <img src={cart} alt="wishlist" />
-                <span> Cart</span>
-              </div>
+              <Link to="/cart">
+                <div css={actionCss}>
+                  <img src={cart} alt="wishlist" />
+                  <span> Cart: {items.length > 0 ? items.length : ""}</span>
+                </div>
+              </Link>
             </div>
             <div css={loginCss}>
               <Button

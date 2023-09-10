@@ -1,9 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import theme from "../styles/theme";
+import { Link } from "react-router-dom";
 
 const Card = (props) => {
   const {
+    _id,
     cardImg,
     cardHeartIcon,
     title,
@@ -17,9 +19,10 @@ const Card = (props) => {
     currency,
     offer,
   } = props;
+
   return (
     <div css={cardCss}>
-      <a css={cardLinkCss} href="#a">
+      <Link to={`/deals/${_id}`}>
         <div css={cardImageWrapCss}>
           <img src={cardImg} alt="img" css={cardImageCss} />
           <img src={cardHeartIcon} alt="img" css={heartIconCss} />
@@ -43,7 +46,7 @@ const Card = (props) => {
             <span css={offerCss}>{offer}% OFF</span>
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   );
 };
@@ -54,10 +57,7 @@ const cardCss = css`
   border-radius: 15px;
   border: 1px solid rgba(131, 135, 138, 0.5);
   scroll-snap-align: start;
-`;
-
-const cardLinkCss = css`
-  text-decoration: none;
+  cursor: pointer;
 `;
 
 const cardImageWrapCss = css`

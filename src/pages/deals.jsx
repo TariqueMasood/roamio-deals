@@ -1,65 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import React from "react";
-import alburj from "../images/burj-khalifa.svg";
-import safari from "../images/safari.svg";
-import cruise from "../images/cruise.svg";
-import location from "../images/location.svg";
-import starIcon from "../images/star.svg";
-import heartIcon from "../images/heart-icon.svg";
-import Card from "../components/card";
 import ExternalLink from "../components/external-link";
 import theme from "../styles/theme";
 import { mq } from "../styles/breakpoints";
+import dealsData from "../data/dealsData";
+import Card from "../components/card";
 
 const Deals = () => {
-  const cardData = [
-    {
-      id: 1,
-      cardImage: alburj,
-      cardHeartIcon: heartIcon,
-      title: "Burj Khalifa Observation Deck",
-      locationIcon: location,
-      location: "Al Ain",
-      rating: "4.2",
-      ratingIcon: starIcon,
-      reviewCount: "(4)",
-      review: "Excellent",
-      price: "1,800",
-      currency: "AED",
-      offer: 23,
-    },
-    {
-      id: 2,
-      cardImage: safari,
-      cardHeartIcon: heartIcon,
-      title: "Burj Khalifa Observation Deck",
-      locationIcon: location,
-      location: "Al Ain",
-      rating: "4.2",
-      ratingIcon: starIcon,
-      reviewCount: "(4)",
-      review: "Excellent",
-      price: "1,800",
-      currency: "AED",
-      offer: 23,
-    },
-    {
-      id: 3,
-      cardImage: cruise,
-      cardHeartIcon: heartIcon,
-      title: "Burj Khalifa Observation Deck",
-      locationIcon: location,
-      location: "Al Ain",
-      rating: "4.2",
-      ratingIcon: starIcon,
-      reviewCount: "(4)",
-      review: "Excellent",
-      price: "1,800",
-      currency: "AED",
-      offer: 23,
-    },
-  ];
   return (
     <section className="ptb">
       <div className="container">
@@ -68,24 +15,8 @@ const Deals = () => {
           <ExternalLink anchorLink="#" linkText="View All" />
         </div>
         <div css={cardWrapperCss}>
-          {cardData.map((card, index) => {
-            return (
-              <Card
-                key={index}
-                cardImg={card.cardImage}
-                cardHeartIcon={card.cardHeartIcon}
-                title={card.title}
-                locationIcon={card.locationIcon}
-                location={card.location}
-                rating={card.rating}
-                ratingIcon={card.ratingIcon}
-                reviewCount={card.reviewCount}
-                review={card.review}
-                price={card.price}
-                currency={card.currency}
-                offer={card.offer}
-              />
-            );
+          {dealsData.map((product) => {
+            return <Card {...product} key={product._id} />;
           })}
         </div>
       </div>
